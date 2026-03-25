@@ -587,13 +587,15 @@ tbody td {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 32px;
 }
 
+.dd-left { flex-shrink: 0; }
+
 .dd-label {
-  font-size: 12px; /* was 10px */
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: rgba(30,35,73,0.55);
   margin-bottom: 6px;
@@ -605,35 +607,56 @@ tbody td {
   color: var(--navy);
 }
 
-.dd-right {
+/* Three-stat grid */
+.dd-stats {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  gap: 0;
+  align-items: stretch;
+  flex-wrap: wrap;
 }
 
-.dd-value {
+.dd-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0 36px;
+  border-left: 1px solid rgba(30,35,73,0.18);
+}
+
+.dd-stat:first-child { border-left: none; padding-left: 0; }
+
+.dd-stat-label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(30,35,73,0.5);
+}
+
+.dd-stat-value {
   font-weight: 900;
-  font-size: 40px;
+  font-size: 38px;
   color: var(--navy);
   line-height: 1;
 }
 
-.dd-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.dd-prev {
-  font-size: 14px; /* was 12px */
-  font-weight: 500;
-  color: rgba(30,35,73,0.5);
-}
-
-.dd-delta {
-  font-size: 17px; /* was 15px */
-  font-weight: 800;
+.dd-stat-highlight .dd-stat-value {
   color: var(--positive);
+}
+
+.dd-stat-delta {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.dd-stat-delta.positive { color: var(--positive); }
+.dd-stat-delta.negative { color: var(--negative); }
+.dd-stat-delta.neutral  { color: rgba(30,35,73,0.55); }
+
+.dd-stat-prev {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(30,35,73,0.45);
 }
 
 /* ============================================================
