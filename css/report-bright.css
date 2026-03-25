@@ -788,4 +788,8 @@ tbody td {
   .header-right            { text-align: left; }
   .header-logo             { height: 44px; }
   .dd-inner                { flex-direction: column; align-items: flex-start; }
+
+  /* Channel bar: stack segments vertically so text is fully readable */
+  .channel-bar-wrap        { flex-direction: column; height: auto; }
+  .channel-bar-seg         { flex: none; padding: 13px 20px; justify-content: flex-start; font-size: 15px; }
 }
