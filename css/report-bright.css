@@ -48,6 +48,7 @@ body {
   background: var(--page-bg);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 .page-section { width: 100%; }
@@ -63,35 +64,45 @@ body {
    ============================================================ */
 .report-header {
   background: var(--navy);
-  padding: 40px 0 36px;
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.22);
 }
 
 .report-header .inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
+  gap: 24px;
   flex-wrap: wrap;
 }
 
-.header-logo { height: 60px; width: auto; display: block; }
+.header-logo { height: 38px; width: auto; display: block; }
 
-.header-right { text-align: right; }
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-text { text-align: right; }
 
 .header-label {
   font-weight: 500;
-  font-size: 11px;
-  letter-spacing: 0.16em;
+  font-size: 10px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.75);
-  margin-bottom: 6px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 2px;
 }
 
 .header-title {
   font-weight: 700;
-  font-size: 22px;
+  font-size: 16px;
   color: var(--text-white);
-  margin-bottom: 10px;
+  line-height: 1.2;
 }
 
 .header-date {
@@ -99,11 +110,12 @@ body {
   align-items: center;
   background: var(--coral);
   color: #fff;
-  font-weight: 800;
-  font-size: 13px;
+  font-weight: 700;
+  font-size: 12px;
   letter-spacing: 0.04em;
-  padding: 6px 16px;
+  padding: 6px 14px;
   border-radius: 100px;
+  white-space: nowrap;
 }
 
 /* ============================================================
@@ -116,7 +128,7 @@ body {
 
 .kpi-strip .inner {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 16px;
 }
 
@@ -130,8 +142,8 @@ body {
 
 .kpi-tile-label {
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-muted);
   margin-bottom: 8px;
@@ -164,8 +176,8 @@ body {
 
 .section-eyebrow {
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #f05348;
   margin-bottom: 6px;
@@ -223,8 +235,8 @@ body {
 
 .channel-tile-label {
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-muted);
   margin-bottom: 8px;
@@ -290,8 +302,8 @@ thead th {
   padding: 14px 16px;
   text-align: left;
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   white-space: nowrap;
   color: var(--lavender);
@@ -484,8 +496,8 @@ tbody td {
 
 .loc-metric-label {
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
 }
@@ -520,8 +532,8 @@ tbody td {
 
 .stat-panel-title {
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #f05348;
   margin-bottom: 20px;
@@ -657,8 +669,11 @@ tbody td {
 /* ============================================================
    RESPONSIVE
    ============================================================ */
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .kpi-strip .inner    { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 900px) {
   .cards-grid          { grid-template-columns: repeat(2, 1fr); }
   .channel-tiles       { grid-template-columns: repeat(2, 1fr); }
 }
