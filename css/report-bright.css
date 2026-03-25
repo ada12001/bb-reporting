@@ -516,13 +516,19 @@ tbody td {
   align-items: center;
 }
 
+.delta-pair {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 3px;
+}
+
 .delta-label {
-  font-size: 12px; /* was 10px */
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin-right: 3px;
 }
 
 /* Channel mini-bar — full brand palette */
