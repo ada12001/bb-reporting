@@ -313,8 +313,8 @@ body {
 .toggle-switch {
   position: relative;
   display: inline-block;
-  width: 52px;
-  height: 28px;
+  width: 68px;
+  height: 36px;
   cursor: pointer;
 }
 
@@ -323,9 +323,10 @@ body {
 .toggle-track {
   position: absolute;
   inset: 0;
-  background: var(--border);
+  background: #C8C8D4;
   border-radius: 100px;
-  transition: background 0.25s;
+  transition: background 0.3s ease;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.18);
 }
 
 .toggle-switch input:checked + .toggle-track { background: var(--coral); }
@@ -334,16 +335,19 @@ body {
   position: absolute;
   top: 3px;
   left: 3px;
-  width: 22px;
-  height: 22px;
-  background: #fff;
+  width: 30px;
+  height: 30px;
+  background: #ffffff;
   border-radius: 50%;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-  transition: transform 0.25s;
+  box-shadow:
+    0 4px 10px rgba(0,0,0,0.22),
+    0 1px 3px rgba(0,0,0,0.14),
+    inset 0 1px 1px rgba(255,255,255,0.9);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .toggle-switch input:checked + .toggle-track .toggle-thumb {
-  transform: translateX(24px);
+  transform: translateX(32px);
 }
 
 .card-panel {
