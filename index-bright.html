@@ -119,7 +119,7 @@
         <div class="view-toggle">
           <span class="toggle-label" id="label-table">Table</span>
           <label class="toggle-switch">
-            <input type="checkbox" id="view-toggle-input">
+            <input type="checkbox" id="view-toggle-input" checked>
             <span class="toggle-track"><span class="toggle-thumb"></span></span>
           </label>
           <span class="toggle-label" id="label-cards">Cards</span>
@@ -615,8 +615,7 @@
       var lblTable = document.getElementById('label-table');
       var lblCards = document.getElementById('label-cards');
 
-      toggle.addEventListener('change', function () {
-        var cards = this.checked;
+      function applyState(cards) {
         tableEl.style.display = cards ? 'none'  : 'block';
         cardsEl.style.display = cards ? 'block' : 'none';
         section.classList.toggle('show-cards', cards);
@@ -624,6 +623,13 @@
         title.textContent    = cards ? 'Active Location Breakdowns' : 'Performance by Location';
         lblTable.style.color = cards ? ''                          : 'var(--text-ink)';
         lblCards.style.color = cards ? 'var(--text-ink)'           : '';
+      }
+
+      // Cards are the default (checkbox starts checked)
+      applyState(true);
+
+      toggle.addEventListener('change', function () {
+        applyState(this.checked);
       });
     }());
   </script>
