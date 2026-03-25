@@ -439,18 +439,18 @@ tbody td {
 
 .loc-card-deltas {
   display: flex;
-  gap: 6px;
+  gap: 12px;
   flex-wrap: wrap;
   align-items: center;
 }
 
 .delta-label {
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin-right: 2px;
+  margin-right: 3px;
 }
 
 /* Channel mini-bar — full brand palette */
