@@ -62,7 +62,7 @@ body {
    1. REPORT HEADER — Navy
    ============================================================ */
 .report-header {
-  background: var(--navy);
+  background: var(--salmon);
   padding: 40px 0 36px;
 }
 
@@ -83,7 +83,7 @@ body {
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--lavender);
+  color: rgba(255,255,255,0.75);
   margin-bottom: 6px;
 }
 
@@ -97,8 +97,8 @@ body {
 .header-date {
   display: inline-flex;
   align-items: center;
-  background: var(--yellow);
-  color: var(--navy);
+  background: var(--coral);
+  color: #fff;
   font-weight: 800;
   font-size: 13px;
   letter-spacing: 0.04em;
@@ -107,12 +107,11 @@ body {
 }
 
 /* ============================================================
-   2. KPI STRIP — Navy bg, rainbow-bordered tiles
+   2. KPI STRIP — Coral bg, peach-shadowed tiles
    ============================================================ */
 .kpi-strip {
-  background: var(--navy);
-  border-top: 1px solid rgba(255,255,255,0.07);
-  padding: 0 0 40px;
+  background: var(--section-peach);
+  padding: 56px 0 0 0;
 }
 
 .kpi-strip .inner {
@@ -128,13 +127,6 @@ body {
   border: 1px solid var(--border);
   border-left: 5px solid var(--coral);
 }
-
-/* Cycle the left border through the brand palette */
-.kpi-strip .kpi-tile:nth-child(1) { border-left-color: var(--coral); }
-.kpi-strip .kpi-tile:nth-child(2) { border-left-color: var(--salmon); }
-.kpi-strip .kpi-tile:nth-child(3) { border-left-color: var(--teal); }
-.kpi-strip .kpi-tile:nth-child(4) { border-left-color: var(--yellow); }
-.kpi-strip .kpi-tile:nth-child(5) { border-left-color: var(--pink); }
 
 .kpi-tile-label {
   font-size: 10px;
@@ -167,7 +159,7 @@ body {
    ============================================================ */
 .channel-section {
   background: var(--section-peach);
-  padding: 48px 0;
+  padding: 56px 0;
 }
 
 .section-eyebrow {
@@ -175,7 +167,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--pink);
+  color: #f05348;
   margin-bottom: 6px;
 }
 
@@ -267,7 +259,7 @@ body {
    ============================================================ */
 .table-section {
   background: var(--section-lav);
-  padding: 0 0 48px;
+  padding: 56px 0;
 }
 
 .card-panel {
@@ -383,7 +375,7 @@ tbody td {
    ============================================================ */
 .cards-section {
   background: var(--section-teal);
-  padding: 48px 0;
+  padding: 56px 0;
 }
 
 .cards-grid {
@@ -509,7 +501,7 @@ tbody td {
    ============================================================ */
 .digital-section {
   background: var(--page-bg);
-  padding: 48px 0;
+  padding: 56px 0;
 }
 
 .two-col {
@@ -531,7 +523,7 @@ tbody td {
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--pink);
+  color: #f05348;
   margin-bottom: 20px;
 }
 
@@ -574,7 +566,7 @@ tbody td {
    ============================================================ */
 .dd-section {
   background: var(--yellow);
-  padding: 44px 0;
+  padding: 56px 0;
 }
 
 .dd-inner {
