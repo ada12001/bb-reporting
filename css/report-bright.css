@@ -511,7 +511,7 @@ tbody td {
 
 .loc-card-deltas {
   display: flex;
-  gap: 10px;
+  gap: 16px;
   flex-wrap: wrap;
   align-items: center;
 }
