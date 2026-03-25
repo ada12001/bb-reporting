@@ -1,0 +1,63 @@
+/* ============================================================
+   Bossy Beulah's — Brand Fonts
+   All paths relative to this css/ directory
+   ============================================================ */
+
+/* DIN Round Pro — Primary UI Font */
+@font-face {
+  font-family: 'DIN Round Pro';
+  src: url('../00_Brand Assets/Fonts/Din Round Pro/DINRoundPro-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DIN Round Pro';
+  src: url('../00_Brand Assets/Fonts/Din Round Pro/DINRoundPro-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DIN Round Pro';
+  src: url('../00_Brand Assets/Fonts/Din Round Pro/DINRoundPro-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DIN Round Pro';
+  src: url('../00_Brand Assets/Fonts/Din Round Pro/DINRoundPro-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DIN Round Pro';
+  src: url('../00_Brand Assets/Fonts/Din Round Pro/DINRoundPro-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Milkstore — Display / Hero Font */
+@font-face {
+  font-family: 'Milkstore';
+  src: url('../00_Brand Assets/Fonts/Milkstore/Milkstore03-Clean.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Palmer Lake Print — Script accent */
+@font-face {
+  font-family: 'Palmer Lake Print';
+  src: url('../00_Brand Assets/Fonts/Palmer Lake Print/PalmerLakePrint-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
