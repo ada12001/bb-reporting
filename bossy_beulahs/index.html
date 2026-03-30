@@ -7,8 +7,47 @@
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   <link rel="stylesheet" href="./css/fonts.css" />
   <link rel="stylesheet" href="./css/report-bright.css" />
+  <style>
+    body.auth-pending .report-shell,
+    body.auth-locked .report-shell {
+      display: none;
+    }
+
+    body.auth-pending .auth-overlay,
+    body.auth-allowed .auth-overlay {
+      display: none;
+    }
+  </style>
 </head>
-<body>
+<body class="auth-pending">
+
+  <div class="auth-overlay" id="auth-overlay" aria-hidden="true">
+    <div class="auth-card">
+      <p class="auth-eyebrow">Tripwire Analytics</p>
+      <h1 class="auth-title">Client Report Access</h1>
+      <p class="auth-copy">
+        Enter the placeholder username and password to view this report. This is a front-end-only gate and does not provide real security.
+      </p>
+
+      <form class="auth-form" id="auth-form" novalidate>
+        <label class="auth-field" for="auth-username">
+          <span>Username</span>
+          <input id="auth-username" name="username" type="text" autocomplete="username" required />
+        </label>
+
+        <label class="auth-field" for="auth-password">
+          <span>Password</span>
+          <input id="auth-password" name="password" type="password" autocomplete="current-password" required />
+        </label>
+
+        <p class="auth-error" id="auth-error" role="alert" hidden>Incorrect username or password.</p>
+
+        <button class="auth-submit" type="submit">View Report</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="report-shell">
 
   <!-- ============================================================
        1. REPORT HEADER
@@ -25,12 +64,15 @@
           <p class="header-label">Weekly Performance Summary</p>
           <p class="header-title">Analytics Report</p>
         </div>
-        <div class="header-date-wrap">
-          <select class="header-week-select" id="week-select" aria-label="Select reporting week">
-            <option value="2026-03-22">Mar 22 – 28, 2026</option>
-            <option value="2026-03-15">Mar 15 – 21, 2026</option>
-          </select>
-          <span class="header-date-chevron">▾</span>
+        <div class="header-controls">
+          <div class="header-date-wrap">
+            <select class="header-week-select" id="week-select" aria-label="Select reporting week">
+              <option value="2026-03-22">Mar 22 – 28, 2026</option>
+              <option value="2026-03-15">Mar 15 – 21, 2026</option>
+            </select>
+            <span class="header-date-chevron">▾</span>
+          </div>
+          <button class="header-logout" id="logout-button" type="button" hidden>Log Out</button>
         </div>
       </div>
     </div>
@@ -609,9 +651,23 @@
       </div>
     </div>
   </footer>
+  </div>
 
 
   <script>
+    var AUTH_STORAGE_KEY = 'tw-report:bossy_beulahs:auth';
+    var AUTH_USERNAME = 'nfp';
+    var AUTH_PASSWORD = 'tw023';
+    var DEFAULT_WEEK = '2026-03-22';
+    var reportInitialized = false;
+
+    var authOverlay = document.getElementById('auth-overlay');
+    var authForm = document.getElementById('auth-form');
+    var authUsername = document.getElementById('auth-username');
+    var authPassword = document.getElementById('auth-password');
+    var authError = document.getElementById('auth-error');
+    var logoutButton = document.getElementById('logout-button');
+
     var WEEKS = {
       "2026-03-22": {
         // KPI
@@ -746,6 +802,52 @@
       }
     };
 
+    function readAuthState() {
+      try {
+        return window.localStorage.getItem(AUTH_STORAGE_KEY) === 'allowed';
+      } catch (error) {
+        return false;
+      }
+    }
+
+    function writeAuthState(isAllowed) {
+      try {
+        if (isAllowed) {
+          window.localStorage.setItem(AUTH_STORAGE_KEY, 'allowed');
+        } else {
+          window.localStorage.removeItem(AUTH_STORAGE_KEY);
+        }
+      } catch (error) {
+        // Ignore storage failures and continue with in-memory access for this page load.
+      }
+    }
+
+    function hideAuthError() {
+      authError.hidden = true;
+    }
+
+    function showAuthError() {
+      authError.hidden = false;
+    }
+
+    function applyAuthState(isAllowed) {
+      document.body.classList.remove('auth-pending', 'auth-locked', 'auth-allowed');
+      document.body.classList.add(isAllowed ? 'auth-allowed' : 'auth-locked');
+      authOverlay.setAttribute('aria-hidden', isAllowed ? 'true' : 'false');
+      logoutButton.hidden = !isAllowed;
+
+      if (isAllowed) {
+        hideAuthError();
+        initReport();
+      } else {
+        authForm.reset();
+        hideAuthError();
+        window.setTimeout(function() {
+          authUsername.focus();
+        }, 0);
+      }
+    }
+
     function render(weekKey) {
       var d = WEEKS[weekKey];
       if (!d) return;
@@ -795,13 +897,14 @@
       document.getElementById('week-select').value = weekKey;
     }
 
-    // Week selector
-    document.getElementById('week-select').addEventListener('change', function() {
-      render(this.value);
-    });
+    function initReport() {
+      if (reportInitialized) return;
+      reportInitialized = true;
 
-    // Location table/cards toggle
-    (function () {
+      document.getElementById('week-select').addEventListener('change', function() {
+        render(this.value);
+      });
+
       var toggle   = document.getElementById('view-toggle-input');
       var section  = document.getElementById('locations-section');
       var tableEl  = document.getElementById('view-table');
@@ -827,10 +930,28 @@
       toggle.addEventListener('change', function () {
         applyState(this.checked);
       });
-    }());
+      render(DEFAULT_WEEK);
+    }
 
-    // Init with latest week
-    render("2026-03-22");
+    authForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      if (authUsername.value === AUTH_USERNAME && authPassword.value === AUTH_PASSWORD) {
+        writeAuthState(true);
+        applyAuthState(true);
+        return;
+      }
+
+      showAuthError();
+      authPassword.select();
+    });
+
+    logoutButton.addEventListener('click', function() {
+      writeAuthState(false);
+      applyAuthState(false);
+    });
+
+    applyAuthState(readAuthState());
   </script>
 </body>
 </html>

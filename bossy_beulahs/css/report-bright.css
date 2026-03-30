@@ -59,6 +59,121 @@ body {
   padding: 0 32px;
 }
 
+.report-shell { min-height: 100vh; }
+
+.auth-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  background:
+    radial-gradient(circle at top, rgba(160,216,209,0.4), transparent 42%),
+    linear-gradient(160deg, #1e2349 0%, #262d63 55%, #f05348 140%);
+}
+
+.auth-card {
+  width: min(100%, 440px);
+  background: rgba(255,255,255,0.96);
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 26px 70px rgba(15,18,42,0.35);
+}
+
+.auth-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 10px;
+}
+
+.auth-title {
+  font-family: var(--font-display);
+  font-size: 34px;
+  line-height: 0.95;
+  color: var(--navy);
+  margin-bottom: 14px;
+}
+
+.auth-copy {
+  color: var(--text-muted);
+  font-size: 15px;
+  margin-bottom: 22px;
+}
+
+.auth-form {
+  display: grid;
+  gap: 14px;
+}
+
+.auth-field {
+  display: grid;
+  gap: 7px;
+}
+
+.auth-field span {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.auth-field input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  font: inherit;
+  color: var(--text-ink);
+  background: #fff;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.auth-field input:focus {
+  outline: none;
+  border-color: var(--coral);
+  box-shadow: 0 0 0 4px rgba(240,83,72,0.14);
+}
+
+.auth-error {
+  border-radius: 12px;
+  padding: 11px 13px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #9f2330;
+  background: #ffe9ec;
+}
+
+.auth-submit {
+  border: none;
+  border-radius: 999px;
+  padding: 14px 18px;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 800;
+  color: #fff;
+  background: var(--coral);
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+}
+
+.auth-submit:hover {
+  background: #d9423a;
+  box-shadow: 0 10px 24px rgba(240,83,72,0.28);
+  transform: translateY(-1px);
+}
+
+.auth-submit:focus-visible {
+  outline: 3px solid rgba(240,83,72,0.22);
+  outline-offset: 3px;
+}
+
 /* ============================================================
    1. REPORT HEADER — Navy
    ============================================================ */
@@ -85,6 +200,14 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .header-text { text-align: right; }
@@ -142,6 +265,31 @@ body {
   color: rgba(255,255,255,0.85);
   font-size: 13px;
   line-height: 1;
+}
+
+.header-logout {
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.15s;
+}
+
+.header-logout:hover {
+  background: rgba(255,255,255,0.16);
+  border-color: rgba(255,255,255,0.42);
+  transform: translateY(-1px);
+}
+
+.header-logout:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.28);
+  outline-offset: 2px;
 }
 
 /* ============================================================
@@ -808,11 +956,15 @@ tbody td {
 
 @media (max-width: 600px) {
   .inner { padding: 0 16px; }
+  .auth-overlay            { padding: 20px 16px; }
+  .auth-card               { padding: 24px 20px; border-radius: 20px; }
+  .auth-title              { font-size: 28px; }
   .kpi-strip .inner        { grid-template-columns: 1fr; }
   .cards-grid              { grid-template-columns: 1fr; }
   .two-col                 { grid-template-columns: 1fr; }
   .report-header .inner    { flex-direction: column; align-items: flex-start; }
-  .header-right            { text-align: left; }
+  .header-right            { width: 100%; text-align: left; flex-direction: column; align-items: flex-start; }
+  .header-controls         { width: 100%; justify-content: flex-start; }
   .header-logo             { height: 44px; }
   .dd-inner                { flex-direction: column; align-items: flex-start; }
   .dd-stats                { flex-direction: column; gap: 24px; width: 100%; }
