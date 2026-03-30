@@ -105,17 +105,39 @@ body {
   line-height: 1.2;
 }
 
-.header-date {
+.header-date-wrap {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  background: var(--coral);
-  color: #fff;
-  font-weight: 700;
-  font-size: 14px; /* was 12px */
-  letter-spacing: 0.04em;
-  padding: 6px 14px;
+}
+
+.header-week-select {
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(255,255,255,0.35);
   border-radius: 100px;
+  color: #fff;
+  padding: 6px 32px 6px 14px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.15s;
   white-space: nowrap;
+}
+
+.header-week-select:hover  { background: rgba(255,255,255,0.22); }
+.header-week-select option { background: #1e2349; color: #fff; }
+
+.header-date-chevron {
+  position: absolute;
+  right: 12px;
+  pointer-events: none;
+  color: #fff;
+  font-size: 11px;
+  line-height: 1;
 }
 
 /* ============================================================
@@ -211,9 +233,9 @@ body {
 }
 
 /* Full brand palette for channels */
-.channel-seg-instore { background: var(--coral);   flex: 74.4; color: #fff; }
-.channel-seg-3p      { background: var(--yellow);  flex: 13.2; color: var(--navy); }
-.channel-seg-online  { background: var(--teal);    flex: 12.4; color: var(--navy); }
+.channel-seg-instore { background: var(--coral);  color: #fff; }
+.channel-seg-3p      { background: var(--yellow); color: var(--navy); }
+.channel-seg-online  { background: var(--teal);   color: var(--navy); }
 
 .channel-tiles {
   display: grid;
@@ -802,7 +824,7 @@ tbody td {
   .channel-bar-seg         { flex: none; width: 100%; background: transparent !important; color: var(--navy); padding: 0; justify-content: flex-start; align-items: center; overflow: visible; }
   .seg-label               { width: 62px; flex-shrink: 0; font-size: 13px; font-weight: 700; color: var(--navy); white-space: nowrap; }
   .seg-pct                 { display: flex; align-items: center; justify-content: flex-end; padding: 7px 10px; border-radius: 8px; font-size: 13px; font-weight: 800; white-space: nowrap; }
-  .channel-seg-instore .seg-pct { background: var(--coral);  color: #fff;          width: 74.4%; }
-  .channel-seg-3p      .seg-pct { background: var(--yellow); color: var(--navy);   width: 13.2%; min-width: 52px; }
-  .channel-seg-online  .seg-pct { background: var(--teal);   color: var(--navy);   width: 12.4%; min-width: 52px; }
+  .channel-seg-instore .seg-pct { background: var(--coral);  color: #fff; }
+  .channel-seg-3p      .seg-pct { background: var(--yellow); color: var(--navy); min-width: 52px; }
+  .channel-seg-online  .seg-pct { background: var(--teal);   color: var(--navy); min-width: 52px; }
 }

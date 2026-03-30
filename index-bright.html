@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bossy Beulah's — Weekly Analytics Report · Mar 15–21, 2026 · Bright</title>
+  <title>Bossy Beulah's — Weekly Analytics Report · Bright</title>
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   <link rel="stylesheet" href="./css/fonts.css" />
   <link rel="stylesheet" href="./css/report-bright.css" />
@@ -25,7 +25,13 @@
           <p class="header-label">Weekly Performance Summary</p>
           <p class="header-title">Analytics Report</p>
         </div>
-        <span class="header-date">Mar 15 – 21, 2026</span>
+        <div class="header-date-wrap">
+          <select class="header-week-select" id="week-select" aria-label="Select reporting week">
+            <option value="2026-03-22">Mar 22 – 28, 2026</option>
+            <option value="2026-03-15">Mar 15 – 21, 2026</option>
+          </select>
+          <span class="header-date-chevron">▾</span>
+        </div>
       </div>
     </div>
   </header>
@@ -37,23 +43,23 @@
     <div class="inner">
       <div class="kpi-tile">
         <p class="kpi-tile-label">Total Revenue</p>
-        <p class="kpi-tile-value">$161,904</p>
+        <p class="kpi-tile-value" data-wf="kpi_rev">$176,767</p>
         <p class="kpi-tile-sub">All 6 active locations</p>
       </div>
       <div class="kpi-tile">
         <p class="kpi-tile-label">Week over Week</p>
-        <p class="kpi-tile-value negative">▼ 1.3%</p>
-        <p class="kpi-tile-sub">vs $164,083 prior week</p>
+        <p class="kpi-tile-value positive" data-wf="kpi_wow_val" data-wf-kpi-dir="kpi_wow_dir">▲ 9.2%</p>
+        <p class="kpi-tile-sub" data-wf="kpi_wow_prev">vs $161,904 prior week</p>
       </div>
       <div class="kpi-tile">
         <p class="kpi-tile-label">Month over Month</p>
-        <p class="kpi-tile-value positive">▲ 6.0%</p>
-        <p class="kpi-tile-sub">vs $152,741 prior month</p>
+        <p class="kpi-tile-value positive" data-wf="kpi_mom_val" data-wf-kpi-dir="kpi_mom_dir">▲ 18.5%</p>
+        <p class="kpi-tile-sub" data-wf="kpi_mom_prev">vs $149,178 prior month</p>
       </div>
       <div class="kpi-tile">
         <p class="kpi-tile-label">Year over Year</p>
-        <p class="kpi-tile-value positive">▲ 10.5%</p>
-        <p class="kpi-tile-sub">vs $146,576 prior year</p>
+        <p class="kpi-tile-value positive" data-wf="kpi_yoy_val" data-wf-kpi-dir="kpi_yoy_dir">▲ 22.0%</p>
+        <p class="kpi-tile-sub" data-wf="kpi_yoy_prev">vs $144,900 prior year</p>
       </div>
       <div class="kpi-tile">
         <p class="kpi-tile-label">Active Locations</p>
@@ -62,8 +68,8 @@
       </div>
       <div class="kpi-tile">
         <p class="kpi-tile-label">Loyalty Members</p>
-        <p class="kpi-tile-value">428</p>
-        <p class="kpi-tile-sub">▼ 15.1% vs 504 prior week</p>
+        <p class="kpi-tile-value" data-wf="kpi_loyalty">521</p>
+        <p class="kpi-tile-sub" data-wf="kpi_loyalty_sub">▲ 21.7% vs 428 prior week</p>
       </div>
     </div>
   </section>
@@ -77,29 +83,29 @@
       <p class="section-title">Channel Breakdown — All Locations</p>
 
       <div class="channel-bar-wrap">
-        <div class="channel-bar-seg channel-seg-instore"><span class="seg-label">In-Store</span><span class="seg-pct">74.4%</span></div>
-        <div class="channel-bar-seg channel-seg-3p"><span class="seg-label">3P</span><span class="seg-pct">13.2%</span></div>
-        <div class="channel-bar-seg channel-seg-online"><span class="seg-label">Online</span><span class="seg-pct">12.4%</span></div>
+        <div class="channel-bar-seg channel-seg-instore" data-wf-flex="ch_instore_flex" style="flex:77.4"><span class="seg-label">In-Store</span><span class="seg-pct" data-wf="ch_instore_pct" data-wf-mob-w="ch_instore_mob">77.4%</span></div>
+        <div class="channel-bar-seg channel-seg-3p"      data-wf-flex="ch_3p_flex"      style="flex:12.2"><span class="seg-label">3P</span><span class="seg-pct" data-wf="ch_3p_pct" data-wf-mob-w="ch_3p_mob">12.2%</span></div>
+        <div class="channel-bar-seg channel-seg-online"  data-wf-flex="ch_online_flex"  style="flex:10.4"><span class="seg-label">Online</span><span class="seg-pct" data-wf="ch_online_pct" data-wf-mob-w="ch_online_mob">10.4%</span></div>
       </div>
 
       <div class="channel-tiles">
         <div class="channel-tile c-instore">
           <p class="channel-tile-label">In-Store</p>
-          <p class="channel-tile-value">$120,489</p>
-          <p class="channel-tile-sub">vs $122,503 prior week</p>
-          <p class="channel-tile-share">74.4% of revenue</p>
+          <p class="channel-tile-value" data-wf="ch_instore_rev">$136,788</p>
+          <p class="channel-tile-sub" data-wf="ch_instore_prev">vs $120,489 prior week</p>
+          <p class="channel-tile-share" data-wf="ch_instore_share">77.4% of revenue</p>
         </div>
         <div class="channel-tile c-3p">
           <p class="channel-tile-label">Third Party</p>
-          <p class="channel-tile-value">$21,406</p>
-          <p class="channel-tile-sub">vs $21,679 prior week</p>
-          <p class="channel-tile-share">13.2% of revenue</p>
+          <p class="channel-tile-value" data-wf="ch_3p_rev">$21,599</p>
+          <p class="channel-tile-sub" data-wf="ch_3p_prev">vs $21,412 prior week</p>
+          <p class="channel-tile-share" data-wf="ch_3p_share">12.2% of revenue</p>
         </div>
         <div class="channel-tile c-online">
           <p class="channel-tile-label">Online Orders</p>
-          <p class="channel-tile-value">$20,003</p>
-          <p class="channel-tile-sub">vs $19,901 prior week</p>
-          <p class="channel-tile-share">12.4% of revenue</p>
+          <p class="channel-tile-value" data-wf="ch_online_rev">$18,435</p>
+          <p class="channel-tile-sub" data-wf="ch_online_prev">vs $20,003 prior week</p>
+          <p class="channel-tile-share" data-wf="ch_online_share">10.4% of revenue</p>
         </div>
       </div>
     </div>
@@ -127,8 +133,8 @@
         </div>
       </div>
 
-      <!-- TABLE VIEW (default) -->
-      <div id="view-table">
+      <!-- TABLE VIEW -->
+      <div id="view-table" style="display:none;">
         <div class="card-panel">
           <div class="table-scroll">
             <table>
@@ -149,75 +155,75 @@
               <tbody>
                 <tr>
                   <td><div class="td-location">Park Road</div></td>
-                  <td class="td-revenue">$36,003</td>
-                  <td><span class="delta down">▼ 7.0%</span></td>
-                  <td><span class="delta up">▲ 2.7%</span></td>
-                  <td><span class="delta new">NEW</span></td>
-                  <td>$25,604</td>
-                  <td>$4,985</td>
-                  <td>$5,415</td>
-                  <td>549</td>
-                  <td><span class="marqii-badge"><span class="marqii-dot red"></span>1.5</span></td>
+                  <td class="td-revenue" data-wf="pr_rev">$39,656</td>
+                  <td><span class="delta up" data-wf="pr_wow" data-wf-delta="pr_wow_dir">▲ 10.1%</span></td>
+                  <td><span class="delta up" data-wf="pr_mom" data-wf-delta="pr_mom_dir">▲ 16.5%</span></td>
+                  <td><span class="delta new" data-wf="pr_yoy" data-wf-delta="pr_yoy_dir">NEW</span></td>
+                  <td data-wf="pr_instore">$30,353</td>
+                  <td data-wf="pr_online">$4,489</td>
+                  <td data-wf="pr_3p">$4,814</td>
+                  <td data-wf="pr_loyalty">585</td>
+                  <td><span class="marqii-badge"><span class="marqii-dot amber" data-wf-dot="pr_dot"></span><span data-wf="pr_marqii">3.7</span></span></td>
                 </tr>
                 <tr>
                   <td><div class="td-location">Freedom Drive</div></td>
-                  <td class="td-revenue">$31,781</td>
-                  <td><span class="delta up">▲ 16.5%</span></td>
-                  <td><span class="delta up">▲ 24.2%</span></td>
-                  <td><span class="delta up">▲ 9.1%</span></td>
-                  <td>$22,743</td>
-                  <td>$3,707</td>
-                  <td>$5,326</td>
-                  <td>544</td>
-                  <td><span class="marqii-badge"><span class="marqii-dot green"></span>5.0</span></td>
+                  <td class="td-revenue" data-wf="fd_rev">$32,247</td>
+                  <td><span class="delta up" data-wf="fd_wow" data-wf-delta="fd_wow_dir">▲ 1.5%</span></td>
+                  <td><span class="delta up" data-wf="fd_mom" data-wf-delta="fd_mom_dir">▲ 27.8%</span></td>
+                  <td><span class="delta down" data-wf="fd_yoy" data-wf-delta="fd_yoy_dir">▼ 1.5%</span></td>
+                  <td data-wf="fd_instore">$22,383</td>
+                  <td data-wf="fd_online">$4,378</td>
+                  <td data-wf="fd_3p">$5,486</td>
+                  <td data-wf="fd_loyalty">377</td>
+                  <td><span class="marqii-badge"><span class="marqii-dot green" data-wf-dot="fd_dot"></span><span data-wf="fd_marqii">5.0</span></span></td>
                 </tr>
                 <tr>
                   <td><div class="td-location">Ballantyne</div></td>
-                  <td class="td-revenue">$30,636</td>
-                  <td><span class="delta down">▼ 4.9%</span></td>
-                  <td><span class="delta up">▲ 7.7%</span></td>
-                  <td><span class="delta down">▼ 10.7%</span></td>
-                  <td>$23,490</td>
-                  <td>$3,597</td>
-                  <td>$3,550</td>
-                  <td>359</td>
-                  <td><span class="marqii-badge"><span class="marqii-dot green"></span>5.0</span></td>
+                  <td class="td-revenue" data-wf="bal_rev">$32,433</td>
+                  <td><span class="delta up" data-wf="bal_wow" data-wf-delta="bal_wow_dir">▲ 5.9%</span></td>
+                  <td><span class="delta up" data-wf="bal_mom" data-wf-delta="bal_mom_dir">▲ 35.4%</span></td>
+                  <td><span class="delta down" data-wf="bal_yoy" data-wf-delta="bal_yoy_dir">▼ 5.2%</span></td>
+                  <td data-wf="bal_instore">$25,841</td>
+                  <td data-wf="bal_online">$2,822</td>
+                  <td data-wf="bal_3p">$3,771</td>
+                  <td data-wf="bal_loyalty">393</td>
+                  <td><span class="marqii-badge"><span class="marqii-dot green" data-wf-dot="bal_dot"></span><span data-wf="bal_marqii">5.0</span></span></td>
                 </tr>
                 <tr>
                   <td><div class="td-location">Concord</div></td>
-                  <td class="td-revenue">$24,981</td>
-                  <td><span class="delta down">▼ 5.6%</span></td>
-                  <td><span class="delta up">▲ 6.5%</span></td>
-                  <td><span class="delta new">NEW</span></td>
-                  <td>$18,580</td>
-                  <td>$3,587</td>
-                  <td>$2,815</td>
-                  <td>346</td>
-                  <td><span class="marqii-badge"><span class="marqii-dot green"></span>5.0</span></td>
+                  <td class="td-revenue" data-wf="con_rev">$26,994</td>
+                  <td><span class="delta up" data-wf="con_wow" data-wf-delta="con_wow_dir">▲ 8.1%</span></td>
+                  <td><span class="delta up" data-wf="con_mom" data-wf-delta="con_mom_dir">▲ 1.7%</span></td>
+                  <td><span class="delta new" data-wf="con_yoy" data-wf-delta="con_yoy_dir">NEW</span></td>
+                  <td data-wf="con_instore">$21,947</td>
+                  <td data-wf="con_online">$2,357</td>
+                  <td data-wf="con_3p">$2,690</td>
+                  <td data-wf="con_loyalty">402</td>
+                  <td><span class="marqii-badge"><span class="marqii-dot green" data-wf-dot="con_dot"></span><span data-wf="con_marqii">5.0</span></span></td>
                 </tr>
                 <tr>
                   <td><div class="td-location">Fort Mill</div></td>
-                  <td class="td-revenue">$19,678</td>
-                  <td><span class="delta down">▼ 13.6%</span></td>
-                  <td><span class="delta down">▼ 4.9%</span></td>
-                  <td><span class="delta down">▼ 42.0%</span></td>
-                  <td>$16,664</td>
-                  <td>$1,236</td>
-                  <td>$1,778</td>
-                  <td>289</td>
-                  <td><span class="marqii-badge"><span class="marqii-dot green"></span>5.0</span></td>
+                  <td class="td-revenue" data-wf="fm_rev">$24,835</td>
+                  <td><span class="delta up" data-wf="fm_wow" data-wf-delta="fm_wow_dir">▲ 26.2%</span></td>
+                  <td><span class="delta up" data-wf="fm_mom" data-wf-delta="fm_mom_dir">▲ 24.3%</span></td>
+                  <td><span class="delta down" data-wf="fm_yoy" data-wf-delta="fm_yoy_dir">▼ 12.3%</span></td>
+                  <td data-wf="fm_instore">$20,634</td>
+                  <td data-wf="fm_online">$2,399</td>
+                  <td data-wf="fm_3p">$1,857</td>
+                  <td data-wf="fm_loyalty">302</td>
+                  <td><span class="marqii-badge"><span class="marqii-dot amber" data-wf-dot="fm_dot"></span><span data-wf="fm_marqii">4.5</span></span></td>
                 </tr>
                 <tr>
                   <td><div class="td-location">Winston-Salem</div></td>
-                  <td class="td-revenue">$18,821</td>
-                  <td><span class="delta up">▲ 13.0%</span></td>
-                  <td><span class="delta down">▼ 3.5%</span></td>
-                  <td><span class="delta down">▼ 18.0%</span></td>
-                  <td>$13,409</td>
-                  <td>$2,891</td>
-                  <td>$2,522</td>
-                  <td>222</td>
-                  <td><span class="marqii-badge"><span class="marqii-dot amber"></span>2.9</span></td>
+                  <td class="td-revenue" data-wf="ws_rev">$20,602</td>
+                  <td><span class="delta up" data-wf="ws_wow" data-wf-delta="ws_wow_dir">▲ 9.5%</span></td>
+                  <td><span class="delta up" data-wf="ws_mom" data-wf-delta="ws_mom_dir">▲ 6.1%</span></td>
+                  <td><span class="delta down" data-wf="ws_yoy" data-wf-delta="ws_yoy_dir">▼ 17.7%</span></td>
+                  <td data-wf="ws_instore">$15,630</td>
+                  <td data-wf="ws_online">$1,991</td>
+                  <td data-wf="ws_3p">$2,981</td>
+                  <td data-wf="ws_loyalty">242</td>
+                  <td><span class="marqii-badge"><span class="marqii-dot amber" data-wf-dot="ws_dot"></span><span data-wf="ws_marqii">3.6</span></span></td>
                 </tr>
                 <tr class="row-closed">
                   <td>
@@ -240,44 +246,44 @@
         </div>
       </div><!-- /view-table -->
 
-      <!-- CARD VIEW (hidden by default) -->
-      <div id="view-cards" style="display:none;">
+      <!-- CARD VIEW (default) -->
+      <div id="view-cards">
         <div class="cards-grid">
 
           <!-- Park Road -->
           <div class="loc-card">
             <div class="loc-card-header">
               <div class="loc-card-name">Park Road</div>
-              <span class="marqii-badge"><span class="marqii-dot red"></span>Marqii 1.5</span>
+              <span class="marqii-badge"><span class="marqii-dot amber" data-wf-dot="pr_dot"></span><span data-wf="pr_marqii_badge">Marqii 3.7</span></span>
             </div>
             <div>
-              <div class="loc-card-revenue">$36,003</div>
+              <div class="loc-card-revenue" data-wf="pr_rev">$39,656</div>
               <div class="loc-card-deltas" style="margin-top:8px;">
-                <span class="delta-pair"><span class="delta-label">WoW</span><span class="delta down">▼ 7.0%</span></span>
-                <span class="delta-pair"><span class="delta-label">MoM</span><span class="delta up">▲ 2.7%</span></span>
-                <span class="delta-pair"><span class="delta-label">YoY</span><span class="delta new">NEW</span></span>
+                <span class="delta-pair"><span class="delta-label">WoW</span><span class="delta up" data-wf="pr_wow" data-wf-delta="pr_wow_dir">▲ 10.1%</span></span>
+                <span class="delta-pair"><span class="delta-label">MoM</span><span class="delta up" data-wf="pr_mom" data-wf-delta="pr_mom_dir">▲ 16.5%</span></span>
+                <span class="delta-pair"><span class="delta-label">YoY</span><span class="delta new" data-wf="pr_yoy" data-wf-delta="pr_yoy_dir">NEW</span></span>
               </div>
             </div>
             <div>
               <div class="mini-bar-wrap">
-                <div class="mini-seg mini-seg-instore" style="flex:71.1;"></div>
-                <div class="mini-seg mini-seg-3p"      style="flex:15.0;"></div>
-                <div class="mini-seg mini-seg-online"  style="flex:13.8;"></div>
+                <div class="mini-seg mini-seg-instore" data-wf-flex="pr_mini_instore" style="flex:76.5;"></div>
+                <div class="mini-seg mini-seg-3p"      data-wf-flex="pr_mini_3p"      style="flex:12.1;"></div>
+                <div class="mini-seg mini-seg-online"  data-wf-flex="pr_mini_online"  style="flex:11.3;"></div>
               </div>
               <div class="mini-bar-labels">
-                <span class="mini-bar-label">In-Store 71%</span>
-                <span class="mini-bar-label">3P 15%</span>
-                <span class="mini-bar-label">Online 14%</span>
+                <span class="mini-bar-label" data-wf="pr_mini_instore_lbl">In-Store 77%</span>
+                <span class="mini-bar-label" data-wf="pr_mini_3p_lbl">3P 12%</span>
+                <span class="mini-bar-label" data-wf="pr_mini_online_lbl">Online 11%</span>
               </div>
             </div>
             <div class="loc-card-footer">
               <div class="loc-metric-group">
                 <span class="loc-metric-label">Loyalty Txns</span>
-                <span class="loc-metric-value">549</span>
+                <span class="loc-metric-value" data-wf="pr_loyalty">585</span>
               </div>
               <div class="loc-metric-group" style="text-align:right;">
                 <span class="loc-metric-label">3P Sales</span>
-                <span class="loc-metric-value">$5,415</span>
+                <span class="loc-metric-value" data-wf="pr_3p">$4,814</span>
               </div>
             </div>
           </div>
@@ -286,36 +292,36 @@
           <div class="loc-card">
             <div class="loc-card-header">
               <div class="loc-card-name">Freedom Drive</div>
-              <span class="marqii-badge"><span class="marqii-dot green"></span>Marqii 5.0</span>
+              <span class="marqii-badge"><span class="marqii-dot green" data-wf-dot="fd_dot"></span><span data-wf="fd_marqii_badge">Marqii 5.0</span></span>
             </div>
             <div>
-              <div class="loc-card-revenue">$31,781</div>
+              <div class="loc-card-revenue" data-wf="fd_rev">$32,247</div>
               <div class="loc-card-deltas" style="margin-top:8px;">
-                <span class="delta-pair"><span class="delta-label">WoW</span><span class="delta up">▲ 16.5%</span></span>
-                <span class="delta-pair"><span class="delta-label">MoM</span><span class="delta up">▲ 24.2%</span></span>
-                <span class="delta-pair"><span class="delta-label">YoY</span><span class="delta up">▲ 9.1%</span></span>
+                <span class="delta-pair"><span class="delta-label">WoW</span><span class="delta up" data-wf="fd_wow" data-wf-delta="fd_wow_dir">▲ 1.5%</span></span>
+                <span class="delta-pair"><span class="delta-label">MoM</span><span class="delta up" data-wf="fd_mom" data-wf-delta="fd_mom_dir">▲ 27.8%</span></span>
+                <span class="delta-pair"><span class="delta-label">YoY</span><span class="delta down" data-wf="fd_yoy" data-wf-delta="fd_yoy_dir">▼ 1.5%</span></span>
               </div>
             </div>
             <div>
               <div class="mini-bar-wrap">
-                <div class="mini-seg mini-seg-instore" style="flex:71.6;"></div>
-                <div class="mini-seg mini-seg-3p"      style="flex:16.8;"></div>
-                <div class="mini-seg mini-seg-online"  style="flex:11.7;"></div>
+                <div class="mini-seg mini-seg-instore" data-wf-flex="fd_mini_instore" style="flex:69.4;"></div>
+                <div class="mini-seg mini-seg-3p"      data-wf-flex="fd_mini_3p"      style="flex:17.0;"></div>
+                <div class="mini-seg mini-seg-online"  data-wf-flex="fd_mini_online"  style="flex:13.6;"></div>
               </div>
               <div class="mini-bar-labels">
-                <span class="mini-bar-label">In-Store 72%</span>
-                <span class="mini-bar-label">3P 17%</span>
-                <span class="mini-bar-label">Online 12%</span>
+                <span class="mini-bar-label" data-wf="fd_mini_instore_lbl">In-Store 69%</span>
+                <span class="mini-bar-label" data-wf="fd_mini_3p_lbl">3P 17%</span>
+                <span class="mini-bar-label" data-wf="fd_mini_online_lbl">Online 14%</span>
               </div>
             </div>
             <div class="loc-card-footer">
               <div class="loc-metric-group">
                 <span class="loc-metric-label">Loyalty Txns</span>
-                <span class="loc-metric-value">544</span>
+                <span class="loc-metric-value" data-wf="fd_loyalty">377</span>
               </div>
               <div class="loc-metric-group" style="text-align:right;">
                 <span class="loc-metric-label">3P Sales</span>
-                <span class="loc-metric-value">$5,326</span>
+                <span class="loc-metric-value" data-wf="fd_3p">$5,486</span>
               </div>
             </div>
           </div>
@@ -324,36 +330,36 @@
           <div class="loc-card">
             <div class="loc-card-header">
               <div class="loc-card-name">Ballantyne</div>
-              <span class="marqii-badge"><span class="marqii-dot green"></span>Marqii 5.0</span>
+              <span class="marqii-badge"><span class="marqii-dot green" data-wf-dot="bal_dot"></span><span data-wf="bal_marqii_badge">Marqii 5.0</span></span>
             </div>
             <div>
-              <div class="loc-card-revenue">$30,636</div>
+              <div class="loc-card-revenue" data-wf="bal_rev">$32,433</div>
               <div class="loc-card-deltas" style="margin-top:8px;">
-                <span class="delta-pair"><span class="delta-label">WoW</span><span class="delta down">▼ 4.9%</span></span>
-                <span class="delta-pair"><span class="delta-label">MoM</span><span class="delta up">▲ 7.7%</span></span>
-                <span class="delta-pair"><span class="delta-label">YoY</span><span class="delta down">▼ 10.7%</span></span>
+                <span class="delta-pair"><span class="delta-label">WoW</span><span class="delta up" data-wf="bal_wow" data-wf-delta="bal_wow_dir">▲ 5.9%</span></span>
+                <span class="delta-pair"><span class="delta-label">MoM</span><span class="delta up" data-wf="bal_mom" data-wf-delta="bal_mom_dir">▲ 35.4%</span></span>
+                <span class="delta-pair"><span class="delta-label">YoY</span><span class="delta down" data-wf="bal_yoy" data-wf-delta="bal_yoy_dir">▼ 5.2%</span></span>
               </div>
             </div>
             <div>
               <div class="mini-bar-wrap">
-                <div class="mini-seg mini-seg-instore" style="flex:76.7;"></div>
-                <div class="mini-seg mini-seg-3p"      style="flex:11.6;"></div>
-                <div class="mini-seg mini-seg-online"  style="flex:11.7;"></div>
+                <div class="mini-seg mini-seg-instore" data-wf-flex="bal_mini_instore" style="flex:79.7;"></div>
+                <div class="mini-seg mini-seg-3p"      data-wf-flex="bal_mini_3p"      style="flex:11.6;"></div>
+                <div class="mini-seg mini-seg-online"  data-wf-flex="bal_mini_online"  style="flex:8.7;"></div>
               </div>
               <div class="mini-bar-labels">
-                <span class="mini-bar-label">In-Store 77%</span>
-                <span class="mini-bar-label">3P 12%</span>
-                <span class="mini-bar-label">Online 12%</span>
+                <span class="mini-bar-label" data-wf="bal_mini_instore_lbl">In-Store 80%</span>
+                <span class="mini-bar-label" data-wf="bal_mini_3p_lbl">3P 12%</span>
+                <span class="mini-bar-label" data-wf="bal_mini_online_lbl">Online 9%</span>
               </div>
             </div>
             <div class="loc-card-footer">
               <div class="loc-metric-group">
                 <span class="loc-metric-label">Loyalty Txns</span>
-                <span class="loc-metric-value">359</span>
+                <span class="loc-metric-value" data-wf="bal_loyalty">393</span>
               </div>
               <div class="loc-metric-group" style="text-align:right;">
                 <span class="loc-metric-label">3P Sales</span>
-                <span class="loc-metric-value">$3,550</span>
+                <span class="loc-metric-value" data-wf="bal_3p">$3,771</span>
               </div>
             </div>
           </div>
@@ -362,36 +368,36 @@
           <div class="loc-card">
             <div class="loc-card-header">
               <div class="loc-card-name">Concord</div>
-              <span class="marqii-badge"><span class="marqii-dot green"></span>Marqii 5.0</span>
+              <span class="marqii-badge"><span class="marqii-dot green" data-wf-dot="con_dot"></span><span data-wf="con_marqii_badge">Marqii 5.0</span></span>
             </div>
             <div>
-              <div class="loc-card-revenue">$24,981</div>
+              <div class="loc-card-revenue" data-wf="con_rev">$26,994</div>
               <div class="loc-card-deltas" style="margin-top:8px;">
-                <span class="delta-pair"><span class="delta-label">WoW</span><span class="delta down">▼ 5.6%</span></span>
-                <span class="delta-pair"><span class="delta-label">MoM</span><span class="delta up">▲ 6.5%</span></span>
-                <span class="delta-pair"><span class="delta-label">YoY</span><span class="delta new">NEW</span></span>
+                <span class="delta-pair"><span class="delta-label">WoW</span><span class="delta up" data-wf="con_wow" data-wf-delta="con_wow_dir">▲ 8.1%</span></span>
+                <span class="delta-pair"><span class="delta-label">MoM</span><span class="delta up" data-wf="con_mom" data-wf-delta="con_mom_dir">▲ 1.7%</span></span>
+                <span class="delta-pair"><span class="delta-label">YoY</span><span class="delta new" data-wf="con_yoy" data-wf-delta="con_yoy_dir">NEW</span></span>
               </div>
             </div>
             <div>
               <div class="mini-bar-wrap">
-                <div class="mini-seg mini-seg-instore" style="flex:74.4;"></div>
-                <div class="mini-seg mini-seg-3p"      style="flex:11.3;"></div>
-                <div class="mini-seg mini-seg-online"  style="flex:14.4;"></div>
+                <div class="mini-seg mini-seg-instore" data-wf-flex="con_mini_instore" style="flex:81.3;"></div>
+                <div class="mini-seg mini-seg-3p"      data-wf-flex="con_mini_3p"      style="flex:10.0;"></div>
+                <div class="mini-seg mini-seg-online"  data-wf-flex="con_mini_online"  style="flex:8.7;"></div>
               </div>
               <div class="mini-bar-labels">
-                <span class="mini-bar-label">In-Store 74%</span>
-                <span class="mini-bar-label">3P 11%</span>
-                <span class="mini-bar-label">Online 14%</span>
+                <span class="mini-bar-label" data-wf="con_mini_instore_lbl">In-Store 81%</span>
+                <span class="mini-bar-label" data-wf="con_mini_3p_lbl">3P 10%</span>
+                <span class="mini-bar-label" data-wf="con_mini_online_lbl">Online 9%</span>
               </div>
             </div>
             <div class="loc-card-footer">
               <div class="loc-metric-group">
                 <span class="loc-metric-label">Loyalty Txns</span>
-                <span class="loc-metric-value">346</span>
+                <span class="loc-metric-value" data-wf="con_loyalty">402</span>
               </div>
               <div class="loc-metric-group" style="text-align:right;">
                 <span class="loc-metric-label">3P Sales</span>
-                <span class="loc-metric-value">$2,815</span>
+                <span class="loc-metric-value" data-wf="con_3p">$2,690</span>
               </div>
             </div>
           </div>
@@ -400,36 +406,36 @@
           <div class="loc-card">
             <div class="loc-card-header">
               <div class="loc-card-name">Fort Mill</div>
-              <span class="marqii-badge"><span class="marqii-dot green"></span>Marqii 5.0</span>
+              <span class="marqii-badge"><span class="marqii-dot amber" data-wf-dot="fm_dot"></span><span data-wf="fm_marqii_badge">Marqii 4.5</span></span>
             </div>
             <div>
-              <div class="loc-card-revenue">$19,678</div>
+              <div class="loc-card-revenue" data-wf="fm_rev">$24,835</div>
               <div class="loc-card-deltas" style="margin-top:8px;">
-                <span class="delta-pair"><span class="delta-label">WoW</span><span class="delta down">▼ 13.6%</span></span>
-                <span class="delta-pair"><span class="delta-label">MoM</span><span class="delta down">▼ 4.9%</span></span>
-                <span class="delta-pair"><span class="delta-label">YoY</span><span class="delta down">▼ 42.0%</span></span>
+                <span class="delta-pair"><span class="delta-label">WoW</span><span class="delta up" data-wf="fm_wow" data-wf-delta="fm_wow_dir">▲ 26.2%</span></span>
+                <span class="delta-pair"><span class="delta-label">MoM</span><span class="delta up" data-wf="fm_mom" data-wf-delta="fm_mom_dir">▲ 24.3%</span></span>
+                <span class="delta-pair"><span class="delta-label">YoY</span><span class="delta down" data-wf="fm_yoy" data-wf-delta="fm_yoy_dir">▼ 12.3%</span></span>
               </div>
             </div>
             <div>
               <div class="mini-bar-wrap">
-                <div class="mini-seg mini-seg-instore" style="flex:84.7;"></div>
-                <div class="mini-seg mini-seg-3p"      style="flex:9.0;"></div>
-                <div class="mini-seg mini-seg-online"  style="flex:6.3;"></div>
+                <div class="mini-seg mini-seg-instore" data-wf-flex="fm_mini_instore" style="flex:82.9;"></div>
+                <div class="mini-seg mini-seg-3p"      data-wf-flex="fm_mini_3p"      style="flex:7.5;"></div>
+                <div class="mini-seg mini-seg-online"  data-wf-flex="fm_mini_online"  style="flex:9.6;"></div>
               </div>
               <div class="mini-bar-labels">
-                <span class="mini-bar-label">In-Store 85%</span>
-                <span class="mini-bar-label">3P 9%</span>
-                <span class="mini-bar-label">Online 6%</span>
+                <span class="mini-bar-label" data-wf="fm_mini_instore_lbl">In-Store 83%</span>
+                <span class="mini-bar-label" data-wf="fm_mini_3p_lbl">3P 8%</span>
+                <span class="mini-bar-label" data-wf="fm_mini_online_lbl">Online 10%</span>
               </div>
             </div>
             <div class="loc-card-footer">
               <div class="loc-metric-group">
                 <span class="loc-metric-label">Loyalty Txns</span>
-                <span class="loc-metric-value">289</span>
+                <span class="loc-metric-value" data-wf="fm_loyalty">302</span>
               </div>
               <div class="loc-metric-group" style="text-align:right;">
                 <span class="loc-metric-label">3P Sales</span>
-                <span class="loc-metric-value">$1,778</span>
+                <span class="loc-metric-value" data-wf="fm_3p">$1,857</span>
               </div>
             </div>
           </div>
@@ -438,36 +444,36 @@
           <div class="loc-card">
             <div class="loc-card-header">
               <div class="loc-card-name">Winston-Salem</div>
-              <span class="marqii-badge"><span class="marqii-dot amber"></span>Marqii 2.9</span>
+              <span class="marqii-badge"><span class="marqii-dot amber" data-wf-dot="ws_dot"></span><span data-wf="ws_marqii_badge">Marqii 3.6</span></span>
             </div>
             <div>
-              <div class="loc-card-revenue">$18,821</div>
+              <div class="loc-card-revenue" data-wf="ws_rev">$20,602</div>
               <div class="loc-card-deltas" style="margin-top:8px;">
-                <span class="delta-pair"><span class="delta-label">WoW</span><span class="delta up">▲ 13.0%</span></span>
-                <span class="delta-pair"><span class="delta-label">MoM</span><span class="delta down">▼ 3.5%</span></span>
-                <span class="delta-pair"><span class="delta-label">YoY</span><span class="delta down">▼ 18.0%</span></span>
+                <span class="delta-pair"><span class="delta-label">WoW</span><span class="delta up" data-wf="ws_wow" data-wf-delta="ws_wow_dir">▲ 9.5%</span></span>
+                <span class="delta-pair"><span class="delta-label">MoM</span><span class="delta up" data-wf="ws_mom" data-wf-delta="ws_mom_dir">▲ 6.1%</span></span>
+                <span class="delta-pair"><span class="delta-label">YoY</span><span class="delta down" data-wf="ws_yoy" data-wf-delta="ws_yoy_dir">▼ 17.7%</span></span>
               </div>
             </div>
             <div>
               <div class="mini-bar-wrap">
-                <div class="mini-seg mini-seg-instore" style="flex:71.2;"></div>
-                <div class="mini-seg mini-seg-3p"      style="flex:13.4;"></div>
-                <div class="mini-seg mini-seg-online"  style="flex:15.4;"></div>
+                <div class="mini-seg mini-seg-instore" data-wf-flex="ws_mini_instore" style="flex:75.9;"></div>
+                <div class="mini-seg mini-seg-3p"      data-wf-flex="ws_mini_3p"      style="flex:14.5;"></div>
+                <div class="mini-seg mini-seg-online"  data-wf-flex="ws_mini_online"  style="flex:9.7;"></div>
               </div>
               <div class="mini-bar-labels">
-                <span class="mini-bar-label">In-Store 71%</span>
-                <span class="mini-bar-label">3P 13%</span>
-                <span class="mini-bar-label">Online 15%</span>
+                <span class="mini-bar-label" data-wf="ws_mini_instore_lbl">In-Store 76%</span>
+                <span class="mini-bar-label" data-wf="ws_mini_3p_lbl">3P 15%</span>
+                <span class="mini-bar-label" data-wf="ws_mini_online_lbl">Online 10%</span>
               </div>
             </div>
             <div class="loc-card-footer">
               <div class="loc-metric-group">
                 <span class="loc-metric-label">Loyalty Txns</span>
-                <span class="loc-metric-value">222</span>
+                <span class="loc-metric-value" data-wf="ws_loyalty">242</span>
               </div>
               <div class="loc-metric-group" style="text-align:right;">
                 <span class="loc-metric-label">3P Sales</span>
-                <span class="loc-metric-value">$2,522</span>
+                <span class="loc-metric-value" data-wf="ws_3p">$2,981</span>
               </div>
             </div>
           </div>
@@ -494,25 +500,25 @@
           <div class="stat-row">
             <span class="stat-label">iOS Downloads</span>
             <div class="stat-right">
-              <span class="stat-value">91</span>
-              <span class="delta down">▼ 17.3%</span>
-              <span class="stat-prev">prev: 110</span>
+              <span class="stat-value" data-wf="ios_val">131</span>
+              <span class="delta up" data-wf="ios_delta" data-wf-delta="ios_dir">▲ 44.0%</span>
+              <span class="stat-prev" data-wf="ios_prev">prev: 91</span>
             </div>
           </div>
           <div class="stat-row">
             <span class="stat-label">Android Downloads</span>
             <div class="stat-right">
-              <span class="stat-value">14</span>
-              <span class="delta down">▼ 22.2%</span>
-              <span class="stat-prev">prev: 18</span>
+              <span class="stat-value" data-wf="and_val">16</span>
+              <span class="delta up" data-wf="and_delta" data-wf-delta="and_dir">▲ 14.3%</span>
+              <span class="stat-prev" data-wf="and_prev">prev: 14</span>
             </div>
           </div>
           <div class="stat-row">
             <span class="stat-label">Total Downloads</span>
             <div class="stat-right">
-              <span class="stat-value">105</span>
-              <span class="delta down">▼ 18.0%</span>
-              <span class="stat-prev">prev: 128</span>
+              <span class="stat-value" data-wf="tot_val">147</span>
+              <span class="delta up" data-wf="tot_delta" data-wf-delta="tot_dir">▲ 40.0%</span>
+              <span class="stat-prev" data-wf="tot_prev">prev: 105</span>
             </div>
           </div>
         </div>
@@ -523,25 +529,25 @@
           <div class="stat-row">
             <span class="stat-label">Loyalty Transactions</span>
             <div class="stat-right">
-              <span class="stat-value">2,087</span>
-              <span class="delta down">▼ 4.4%</span>
-              <span class="stat-prev">prev: 2,184</span>
+              <span class="stat-value" data-wf="loy_txns_val">2,301</span>
+              <span class="delta up" data-wf="loy_txns_delta" data-wf-delta="loy_txns_dir">▲ 10.3%</span>
+              <span class="stat-prev" data-wf="loy_txns_prev">prev: 2,087</span>
             </div>
           </div>
           <div class="stat-row">
             <span class="stat-label">New Loyalty Accounts</span>
             <div class="stat-right">
-              <span class="stat-value">428</span>
-              <span class="delta down">▼ 15.1%</span>
-              <span class="stat-prev">prev: 504</span>
+              <span class="stat-value" data-wf="loy_accts_val">521</span>
+              <span class="delta up" data-wf="loy_accts_delta" data-wf-delta="loy_accts_dir">▲ 21.7%</span>
+              <span class="stat-prev" data-wf="loy_accts_prev">prev: 428</span>
             </div>
           </div>
           <div class="stat-row">
             <span class="stat-label">Marqii Score (Network)</span>
             <div class="stat-right">
-              <span class="stat-value">4.0</span>
-              <span class="delta down">▼ 0.7</span>
-              <span class="stat-prev">prev: 4.7</span>
+              <span class="stat-value" data-wf="net_marqii_val">4.4</span>
+              <span class="delta up" data-wf="net_marqii_delta" data-wf-delta="net_marqii_dir">▲ +0.4</span>
+              <span class="stat-prev" data-wf="net_marqii_prev">prev: 4.0</span>
             </div>
           </div>
         </div>
@@ -564,23 +570,23 @@
 
           <div class="dd-stat">
             <p class="dd-stat-label">Campaign Sales</p>
-            <p class="dd-stat-value">$2,829</p>
-            <span class="dd-stat-delta positive">▲ +8.8%</span>
-            <p class="dd-stat-prev">Prior week: $2,601</p>
+            <p class="dd-stat-value" data-wf="dd_sales_val">$4,520</p>
+            <span class="dd-stat-delta positive" data-wf="dd_sales_delta" data-wf-dd-dir="dd_sales_ddir">▲ +59.8%</span>
+            <p class="dd-stat-prev" data-wf="dd_sales_prev">Prior week: $2,829</p>
           </div>
 
           <div class="dd-stat">
             <p class="dd-stat-label">Ad Spend</p>
-            <p class="dd-stat-value">$452</p>
-            <span class="dd-stat-delta neutral">▲ +81.3%</span>
-            <p class="dd-stat-prev">Prior week: $250</p>
+            <p class="dd-stat-value" data-wf="dd_spend_val">$1,032</p>
+            <span class="dd-stat-delta neutral" data-wf="dd_spend_delta">▲ +128.2%</span>
+            <p class="dd-stat-prev" data-wf="dd_spend_prev">Prior week: $452</p>
           </div>
 
           <div class="dd-stat dd-stat-highlight">
             <p class="dd-stat-label">ROAS</p>
-            <p class="dd-stat-value">6.25x</p>
-            <span class="dd-stat-delta negative">▼ vs 10.43x prior</span>
-            <p class="dd-stat-prev">$6.25 returned per $1 spent</p>
+            <p class="dd-stat-value" data-wf="dd_roas_val">4.38x</p>
+            <span class="dd-stat-delta negative" data-wf="dd_roas_delta" data-wf-dd-dir="dd_roas_ddir">▼ vs 6.25x prior</span>
+            <p class="dd-stat-prev" data-wf="dd_roas_note">$4.38 returned per $1 spent</p>
           </div>
 
         </div>
@@ -595,7 +601,7 @@
     <div class="inner">
       <div class="footer-inner">
         <p class="footer-brand">
-          <span>Bossy Beulah's</span> &middot; Weekly Analytics &middot; Mar 15–21, 2026
+          <span>Bossy Beulah's</span> &middot; Weekly Analytics &middot; <span data-wf="footer_date">Mar 22–28, 2026</span>
         </p>
         <p class="footer-note">
           Data sourced from POS, third-party platforms, app stores, and loyalty system.
@@ -606,6 +612,195 @@
 
 
   <script>
+    var WEEKS = {
+      "2026-03-22": {
+        // KPI
+        kpi_rev: "$176,767",
+        kpi_wow_val: "▲ 9.2%",    kpi_wow_dir: "positive",  kpi_wow_prev: "vs $161,904 prior week",
+        kpi_mom_val: "▲ 18.5%",   kpi_mom_dir: "positive",  kpi_mom_prev: "vs $149,178 prior month",
+        kpi_yoy_val: "▲ 22.0%",   kpi_yoy_dir: "positive",  kpi_yoy_prev: "vs $144,900 prior year",
+        kpi_loyalty: "521",        kpi_loyalty_sub: "▲ 21.7% vs 428 prior week",
+        // Channel bar
+        ch_instore_flex: 77.4, ch_3p_flex: 12.2, ch_online_flex: 10.4,
+        ch_instore_mob: 77.4,  ch_3p_mob: 12.2,  ch_online_mob: 10.4,
+        ch_instore_pct: "77.4%", ch_3p_pct: "12.2%", ch_online_pct: "10.4%",
+        ch_instore_rev: "$136,788", ch_instore_prev: "vs $120,489 prior week", ch_instore_share: "77.4% of revenue",
+        ch_3p_rev: "$21,599",       ch_3p_prev: "vs $21,412 prior week",       ch_3p_share: "12.2% of revenue",
+        ch_online_rev: "$18,435",   ch_online_prev: "vs $20,003 prior week",   ch_online_share: "10.4% of revenue",
+        // Park Road
+        pr_rev: "$39,656", pr_wow: "▲ 10.1%", pr_wow_dir: "up", pr_mom: "▲ 16.5%", pr_mom_dir: "up", pr_yoy: "NEW", pr_yoy_dir: "new",
+        pr_instore: "$30,353", pr_online: "$4,489", pr_3p: "$4,814", pr_loyalty: "585",
+        pr_marqii: "3.7", pr_dot: "amber", pr_marqii_badge: "Marqii 3.7",
+        pr_mini_instore: 76.5, pr_mini_3p: 12.1, pr_mini_online: 11.3,
+        pr_mini_instore_lbl: "In-Store 77%", pr_mini_3p_lbl: "3P 12%", pr_mini_online_lbl: "Online 11%",
+        // Freedom Drive
+        fd_rev: "$32,247", fd_wow: "▲ 1.5%", fd_wow_dir: "up", fd_mom: "▲ 27.8%", fd_mom_dir: "up", fd_yoy: "▼ 1.5%", fd_yoy_dir: "down",
+        fd_instore: "$22,383", fd_online: "$4,378", fd_3p: "$5,486", fd_loyalty: "377",
+        fd_marqii: "5.0", fd_dot: "green", fd_marqii_badge: "Marqii 5.0",
+        fd_mini_instore: 69.4, fd_mini_3p: 17.0, fd_mini_online: 13.6,
+        fd_mini_instore_lbl: "In-Store 69%", fd_mini_3p_lbl: "3P 17%", fd_mini_online_lbl: "Online 14%",
+        // Ballantyne
+        bal_rev: "$32,433", bal_wow: "▲ 5.9%", bal_wow_dir: "up", bal_mom: "▲ 35.4%", bal_mom_dir: "up", bal_yoy: "▼ 5.2%", bal_yoy_dir: "down",
+        bal_instore: "$25,841", bal_online: "$2,822", bal_3p: "$3,771", bal_loyalty: "393",
+        bal_marqii: "5.0", bal_dot: "green", bal_marqii_badge: "Marqii 5.0",
+        bal_mini_instore: 79.7, bal_mini_3p: 11.6, bal_mini_online: 8.7,
+        bal_mini_instore_lbl: "In-Store 80%", bal_mini_3p_lbl: "3P 12%", bal_mini_online_lbl: "Online 9%",
+        // Concord
+        con_rev: "$26,994", con_wow: "▲ 8.1%", con_wow_dir: "up", con_mom: "▲ 1.7%", con_mom_dir: "up", con_yoy: "NEW", con_yoy_dir: "new",
+        con_instore: "$21,947", con_online: "$2,357", con_3p: "$2,690", con_loyalty: "402",
+        con_marqii: "5.0", con_dot: "green", con_marqii_badge: "Marqii 5.0",
+        con_mini_instore: 81.3, con_mini_3p: 10.0, con_mini_online: 8.7,
+        con_mini_instore_lbl: "In-Store 81%", con_mini_3p_lbl: "3P 10%", con_mini_online_lbl: "Online 9%",
+        // Fort Mill
+        fm_rev: "$24,835", fm_wow: "▲ 26.2%", fm_wow_dir: "up", fm_mom: "▲ 24.3%", fm_mom_dir: "up", fm_yoy: "▼ 12.3%", fm_yoy_dir: "down",
+        fm_instore: "$20,634", fm_online: "$2,399", fm_3p: "$1,857", fm_loyalty: "302",
+        fm_marqii: "4.5", fm_dot: "amber", fm_marqii_badge: "Marqii 4.5",
+        fm_mini_instore: 82.9, fm_mini_3p: 7.5, fm_mini_online: 9.6,
+        fm_mini_instore_lbl: "In-Store 83%", fm_mini_3p_lbl: "3P 8%", fm_mini_online_lbl: "Online 10%",
+        // Winston-Salem
+        ws_rev: "$20,602", ws_wow: "▲ 9.5%", ws_wow_dir: "up", ws_mom: "▲ 6.1%", ws_mom_dir: "up", ws_yoy: "▼ 17.7%", ws_yoy_dir: "down",
+        ws_instore: "$15,630", ws_online: "$1,991", ws_3p: "$2,981", ws_loyalty: "242",
+        ws_marqii: "3.6", ws_dot: "amber", ws_marqii_badge: "Marqii 3.6",
+        ws_mini_instore: 75.9, ws_mini_3p: 14.5, ws_mini_online: 9.7,
+        ws_mini_instore_lbl: "In-Store 76%", ws_mini_3p_lbl: "3P 15%", ws_mini_online_lbl: "Online 10%",
+        // Digital
+        ios_val: "131", ios_delta: "▲ 44.0%", ios_dir: "up", ios_prev: "prev: 91",
+        and_val: "16",  and_delta: "▲ 14.3%", and_dir: "up", and_prev: "prev: 14",
+        tot_val: "147", tot_delta: "▲ 40.0%", tot_dir: "up", tot_prev: "prev: 105",
+        // Loyalty
+        loy_txns_val: "2,301", loy_txns_delta: "▲ 10.3%", loy_txns_dir: "up",  loy_txns_prev: "prev: 2,087",
+        loy_accts_val: "521",  loy_accts_delta: "▲ 21.7%", loy_accts_dir: "up", loy_accts_prev: "prev: 428",
+        net_marqii_val: "4.4", net_marqii_delta: "▲ +0.4", net_marqii_dir: "up", net_marqii_prev: "prev: 4.0",
+        // DoorDash
+        dd_sales_val: "$4,520", dd_sales_delta: "▲ +59.8%", dd_sales_ddir: "positive", dd_sales_prev: "Prior week: $2,829",
+        dd_spend_val: "$1,032", dd_spend_delta: "▲ +128.2%", dd_spend_prev: "Prior week: $452",
+        dd_roas_val: "4.38x", dd_roas_delta: "▼ vs 6.25x prior", dd_roas_ddir: "negative", dd_roas_note: "$4.38 returned per $1 spent",
+        // Footer
+        footer_date: "Mar 22–28, 2026"
+      },
+
+      "2026-03-15": {
+        // KPI
+        kpi_rev: "$161,904",
+        kpi_wow_val: "▼ 1.3%",    kpi_wow_dir: "negative",  kpi_wow_prev: "vs $164,083 prior week",
+        kpi_mom_val: "▲ 6.0%",    kpi_mom_dir: "positive",  kpi_mom_prev: "vs $152,741 prior month",
+        kpi_yoy_val: "▲ 10.5%",   kpi_yoy_dir: "positive",  kpi_yoy_prev: "vs $146,576 prior year",
+        kpi_loyalty: "428",        kpi_loyalty_sub: "▼ 15.1% vs 504 prior week",
+        // Channel bar
+        ch_instore_flex: 74.4, ch_3p_flex: 13.2, ch_online_flex: 12.4,
+        ch_instore_mob: 74.4,  ch_3p_mob: 13.2,  ch_online_mob: 12.4,
+        ch_instore_pct: "74.4%", ch_3p_pct: "13.2%", ch_online_pct: "12.4%",
+        ch_instore_rev: "$120,489", ch_instore_prev: "vs $122,503 prior week", ch_instore_share: "74.4% of revenue",
+        ch_3p_rev: "$21,406",       ch_3p_prev: "vs $21,679 prior week",       ch_3p_share: "13.2% of revenue",
+        ch_online_rev: "$20,003",   ch_online_prev: "vs $19,901 prior week",   ch_online_share: "12.4% of revenue",
+        // Park Road
+        pr_rev: "$36,003", pr_wow: "▼ 7.0%", pr_wow_dir: "down", pr_mom: "▲ 2.7%", pr_mom_dir: "up", pr_yoy: "NEW", pr_yoy_dir: "new",
+        pr_instore: "$25,604", pr_online: "$4,985", pr_3p: "$5,415", pr_loyalty: "549",
+        pr_marqii: "1.5", pr_dot: "red", pr_marqii_badge: "Marqii 1.5",
+        pr_mini_instore: 71.1, pr_mini_3p: 15.0, pr_mini_online: 13.8,
+        pr_mini_instore_lbl: "In-Store 71%", pr_mini_3p_lbl: "3P 15%", pr_mini_online_lbl: "Online 14%",
+        // Freedom Drive
+        fd_rev: "$31,781", fd_wow: "▲ 16.5%", fd_wow_dir: "up", fd_mom: "▲ 24.2%", fd_mom_dir: "up", fd_yoy: "▲ 9.1%", fd_yoy_dir: "up",
+        fd_instore: "$22,743", fd_online: "$3,707", fd_3p: "$5,326", fd_loyalty: "544",
+        fd_marqii: "5.0", fd_dot: "green", fd_marqii_badge: "Marqii 5.0",
+        fd_mini_instore: 71.6, fd_mini_3p: 16.8, fd_mini_online: 11.7,
+        fd_mini_instore_lbl: "In-Store 72%", fd_mini_3p_lbl: "3P 17%", fd_mini_online_lbl: "Online 12%",
+        // Ballantyne
+        bal_rev: "$30,636", bal_wow: "▼ 4.9%", bal_wow_dir: "down", bal_mom: "▲ 7.7%", bal_mom_dir: "up", bal_yoy: "▼ 10.7%", bal_yoy_dir: "down",
+        bal_instore: "$23,490", bal_online: "$3,597", bal_3p: "$3,550", bal_loyalty: "359",
+        bal_marqii: "5.0", bal_dot: "green", bal_marqii_badge: "Marqii 5.0",
+        bal_mini_instore: 76.7, bal_mini_3p: 11.6, bal_mini_online: 11.7,
+        bal_mini_instore_lbl: "In-Store 77%", bal_mini_3p_lbl: "3P 12%", bal_mini_online_lbl: "Online 12%",
+        // Concord
+        con_rev: "$24,981", con_wow: "▼ 5.6%", con_wow_dir: "down", con_mom: "▲ 6.5%", con_mom_dir: "up", con_yoy: "NEW", con_yoy_dir: "new",
+        con_instore: "$18,580", con_online: "$3,587", con_3p: "$2,815", con_loyalty: "346",
+        con_marqii: "5.0", con_dot: "green", con_marqii_badge: "Marqii 5.0",
+        con_mini_instore: 74.4, con_mini_3p: 11.3, con_mini_online: 14.4,
+        con_mini_instore_lbl: "In-Store 74%", con_mini_3p_lbl: "3P 11%", con_mini_online_lbl: "Online 14%",
+        // Fort Mill
+        fm_rev: "$19,678", fm_wow: "▼ 13.6%", fm_wow_dir: "down", fm_mom: "▼ 4.9%", fm_mom_dir: "down", fm_yoy: "▼ 42.0%", fm_yoy_dir: "down",
+        fm_instore: "$16,664", fm_online: "$1,236", fm_3p: "$1,778", fm_loyalty: "289",
+        fm_marqii: "5.0", fm_dot: "green", fm_marqii_badge: "Marqii 5.0",
+        fm_mini_instore: 84.7, fm_mini_3p: 9.0, fm_mini_online: 6.3,
+        fm_mini_instore_lbl: "In-Store 85%", fm_mini_3p_lbl: "3P 9%", fm_mini_online_lbl: "Online 6%",
+        // Winston-Salem
+        ws_rev: "$18,821", ws_wow: "▲ 13.0%", ws_wow_dir: "up", ws_mom: "▼ 3.5%", ws_mom_dir: "down", ws_yoy: "▼ 18.0%", ws_yoy_dir: "down",
+        ws_instore: "$13,409", ws_online: "$2,891", ws_3p: "$2,522", ws_loyalty: "222",
+        ws_marqii: "2.9", ws_dot: "amber", ws_marqii_badge: "Marqii 2.9",
+        ws_mini_instore: 71.2, ws_mini_3p: 13.4, ws_mini_online: 15.4,
+        ws_mini_instore_lbl: "In-Store 71%", ws_mini_3p_lbl: "3P 13%", ws_mini_online_lbl: "Online 15%",
+        // Digital
+        ios_val: "91",  ios_delta: "▼ 17.3%", ios_dir: "down", ios_prev: "prev: 110",
+        and_val: "14",  and_delta: "▼ 22.2%", and_dir: "down", and_prev: "prev: 18",
+        tot_val: "105", tot_delta: "▼ 18.0%", tot_dir: "down", tot_prev: "prev: 128",
+        // Loyalty
+        loy_txns_val: "2,087", loy_txns_delta: "▼ 4.4%",  loy_txns_dir: "down",  loy_txns_prev: "prev: 2,184",
+        loy_accts_val: "428",  loy_accts_delta: "▼ 15.1%", loy_accts_dir: "down", loy_accts_prev: "prev: 504",
+        net_marqii_val: "4.0", net_marqii_delta: "▼ 0.7",  net_marqii_dir: "down", net_marqii_prev: "prev: 4.7",
+        // DoorDash
+        dd_sales_val: "$2,829", dd_sales_delta: "▲ +8.8%", dd_sales_ddir: "positive", dd_sales_prev: "Prior week: $2,601",
+        dd_spend_val: "$452",   dd_spend_delta: "▲ +81.3%", dd_spend_prev: "Prior week: $250",
+        dd_roas_val: "6.25x", dd_roas_delta: "▼ vs 10.43x prior", dd_roas_ddir: "negative", dd_roas_note: "$6.25 returned per $1 spent",
+        // Footer
+        footer_date: "Mar 15–21, 2026"
+      }
+    };
+
+    function render(weekKey) {
+      var d = WEEKS[weekKey];
+      if (!d) return;
+
+      // Text content
+      document.querySelectorAll('[data-wf]').forEach(function(el) {
+        var v = d[el.getAttribute('data-wf')];
+        if (v !== undefined) el.textContent = v;
+      });
+
+      // KPI direction class (positive / negative)
+      document.querySelectorAll('[data-wf-kpi-dir]').forEach(function(el) {
+        var dir = d[el.getAttribute('data-wf-kpi-dir')] || '';
+        el.className = 'kpi-tile-value ' + dir;
+      });
+
+      // Delta class (up / down / new / na)
+      document.querySelectorAll('[data-wf-delta]').forEach(function(el) {
+        var dir = d[el.getAttribute('data-wf-delta')] || '';
+        el.className = 'delta ' + dir;
+      });
+
+      // DD stat delta class (positive / neutral / negative)
+      document.querySelectorAll('[data-wf-dd-dir]').forEach(function(el) {
+        var dir = d[el.getAttribute('data-wf-dd-dir')] || '';
+        el.className = 'dd-stat-delta ' + dir;
+      });
+
+      // Inline flex (desktop channel bar + mini-bars)
+      document.querySelectorAll('[data-wf-flex]').forEach(function(el) {
+        var v = d[el.getAttribute('data-wf-flex')];
+        if (v !== undefined) el.style.flex = v;
+      });
+
+      // Inline width% (mobile channel bar seg-pct)
+      document.querySelectorAll('[data-wf-mob-w]').forEach(function(el) {
+        var v = d[el.getAttribute('data-wf-mob-w')];
+        if (v !== undefined) el.style.width = v + '%';
+      });
+
+      // Marqii dot color class
+      document.querySelectorAll('[data-wf-dot]').forEach(function(el) {
+        el.className = 'marqii-dot ' + (d[el.getAttribute('data-wf-dot')] || 'green');
+      });
+
+      // Sync select
+      document.getElementById('week-select').value = weekKey;
+    }
+
+    // Week selector
+    document.getElementById('week-select').addEventListener('change', function() {
+      render(this.value);
+    });
+
+    // Location table/cards toggle
     (function () {
       var toggle   = document.getElementById('view-toggle-input');
       var section  = document.getElementById('locations-section');
@@ -633,6 +828,9 @@
         applyState(this.checked);
       });
     }());
+
+    // Init with latest week
+    render("2026-03-22");
   </script>
 </body>
 </html>
