@@ -64,6 +64,7 @@
         <div class="header-controls">
           <div class="header-date-wrap">
             <select class="header-week-select" id="week-select" aria-label="Select reporting week">
+              <option value="2026-03-29">Mar 29 – Apr 4, 2026</option>
               <option value="2026-03-22">Mar 22 – 28, 2026</option>
               <option value="2026-03-15">Mar 15 – 21, 2026</option>
             </select>
@@ -655,7 +656,7 @@
     var AUTH_STORAGE_KEY = 'tw-report:bossy_beulahs:auth';
     var AUTH_USERNAME = 'nfp';
     var AUTH_PASSWORD = 'tw023';
-    var DEFAULT_WEEK = '2026-03-22';
+    var DEFAULT_WEEK = '2026-03-29';
     var reportInitialized = false;
 
     var authOverlay = document.getElementById('auth-overlay');
@@ -666,6 +667,72 @@
     var logoutButton = document.getElementById('logout-button');
 
     var WEEKS = {
+      "2026-03-29": {
+        // KPI
+        kpi_rev: "$177,306",
+        kpi_wow_val: "▲ 0.3%",    kpi_wow_dir: "positive",  kpi_wow_prev: "vs $176,703 prior week",
+        kpi_mom_val: "▲ 4.3%",    kpi_mom_dir: "positive",  kpi_mom_prev: "vs $170,024 prior month",
+        kpi_yoy_val: "▲ 31.5%",   kpi_yoy_dir: "positive",  kpi_yoy_prev: "vs $134,819 prior year",
+        kpi_loyalty: "394",        kpi_loyalty_sub: "▼ 24.4% vs 521 prior week",
+        // Channel bar
+        ch_instore_flex: 75.8, ch_3p_flex: 12.2, ch_online_flex: 10.4,
+        ch_instore_mob: 75.8,  ch_3p_mob: 12.2,  ch_online_mob: 10.4,
+        ch_instore_pct: "75.8%", ch_3p_pct: "12.2%", ch_online_pct: "10.4%",
+        ch_instore_rev: "$134,314", ch_instore_prev: "vs $136,724 prior week", ch_instore_share: "75.8% of revenue",
+        ch_3p_rev: "$21,547",       ch_3p_prev: "vs $21,599 prior week",       ch_3p_share: "12.2% of revenue",
+        ch_online_rev: "$18,435",   ch_online_prev: "vs $18,435 prior week",   ch_online_share: "10.4% of revenue",
+        // Park Road
+        pr_rev: "$38,931", pr_wow: "▼ 1.7%", pr_wow_dir: "down", pr_mom: "▼ 4.7%", pr_mom_dir: "down", pr_yoy: "NEW", pr_yoy_dir: "new",
+        pr_instore: "$27,174", pr_online: "$6,062", pr_3p: "$5,695", pr_loyalty: "549",
+        pr_marqii: "5.0", pr_dot: "green", pr_marqii_badge: "Marqii 5.0",
+        pr_mini_instore: 69.8, pr_mini_3p: 14.6, pr_mini_online: 15.6,
+        pr_mini_instore_lbl: "In-Store 70%", pr_mini_3p_lbl: "3P 15%", pr_mini_online_lbl: "Online 16%",
+        // Freedom Drive
+        fd_rev: "$29,101", fd_wow: "▼ 9.8%", fd_wow_dir: "down", fd_mom: "▲ 8.3%", fd_mom_dir: "up", fd_yoy: "▲ 1.9%", fd_yoy_dir: "up",
+        fd_instore: "$21,034", fd_online: "$3,663", fd_3p: "$4,404", fd_loyalty: "353",
+        fd_marqii: "4.9", fd_dot: "green", fd_marqii_badge: "Marqii 4.9",
+        fd_mini_instore: 72.3, fd_mini_3p: 15.1, fd_mini_online: 12.6,
+        fd_mini_instore_lbl: "In-Store 72%", fd_mini_3p_lbl: "3P 15%", fd_mini_online_lbl: "Online 13%",
+        // Ballantyne
+        bal_rev: "$33,080", bal_wow: "▲ 2.0%", bal_wow_dir: "up", bal_mom: "▲ 3.4%", bal_mom_dir: "up", bal_yoy: "▼ 2.5%", bal_yoy_dir: "down",
+        bal_instore: "$25,636", bal_online: "$3,989", bal_3p: "$3,455", bal_loyalty: "369",
+        bal_marqii: "4.4", bal_dot: "amber", bal_marqii_badge: "Marqii 4.4",
+        bal_mini_instore: 77.5, bal_mini_3p: 10.4, bal_mini_online: 12.1,
+        bal_mini_instore_lbl: "In-Store 78%", bal_mini_3p_lbl: "3P 10%", bal_mini_online_lbl: "Online 12%",
+        // Concord
+        con_rev: "$26,597", con_wow: "▼ 1.5%", con_wow_dir: "down", con_mom: "▼ 4.8%", con_mom_dir: "down", con_yoy: "NEW", con_yoy_dir: "new",
+        con_instore: "$21,956", con_online: "$2,799", con_3p: "$2,628", con_loyalty: "395",
+        con_marqii: "2.3", con_dot: "red", con_marqii_badge: "Marqii 2.3",
+        con_mini_instore: 80.2, con_mini_3p: 9.6, con_mini_online: 10.2,
+        con_mini_instore_lbl: "In-Store 80%", con_mini_3p_lbl: "3P 10%", con_mini_online_lbl: "Online 10%",
+        // Fort Mill
+        fm_rev: "$26,402", fm_wow: "▲ 6.3%", fm_wow_dir: "up", fm_mom: "▲ 9.3%", fm_mom_dir: "up", fm_yoy: "▲ 6.7%", fm_yoy_dir: "up",
+        fm_instore: "$21,036", fm_online: "$3,071", fm_3p: "$2,295", fm_loyalty: "301",
+        fm_marqii: "5.0", fm_dot: "green", fm_marqii_badge: "Marqii 5.0",
+        fm_mini_instore: 79.7, fm_mini_3p: 8.7, fm_mini_online: 11.6,
+        fm_mini_instore_lbl: "In-Store 80%", fm_mini_3p_lbl: "3P 9%", fm_mini_online_lbl: "Online 12%",
+        // Winston-Salem
+        ws_rev: "$23,195", ws_wow: "▲ 12.6%", ws_wow_dir: "up", ws_mom: "▲ 27.3%", ws_mom_dir: "up", ws_yoy: "▼ 4.8%", ws_yoy_dir: "down",
+        ws_instore: "$17,477", ws_online: "$2,647", ws_3p: "$3,070", ws_loyalty: "234",
+        ws_marqii: "5.0", ws_dot: "green", ws_marqii_badge: "Marqii 5.0",
+        ws_mini_instore: 75.4, ws_mini_3p: 13.2, ws_mini_online: 11.4,
+        ws_mini_instore_lbl: "In-Store 75%", ws_mini_3p_lbl: "3P 13%", ws_mini_online_lbl: "Online 11%",
+        // Digital
+        ios_val: "120", ios_delta: "▼ 8.4%",  ios_dir: "down", ios_prev: "prev: 131",
+        and_val: "25",  and_delta: "▲ 56.3%", and_dir: "up",   and_prev: "prev: 16",
+        tot_val: "145", tot_delta: "▼ 1.4%",  tot_dir: "down", tot_prev: "prev: 147",
+        // Loyalty
+        loy_txns_val: "—",   loy_txns_delta: "N/A",    loy_txns_dir: "na",   loy_txns_prev: "prev: 2,301",
+        loy_accts_val: "394", loy_accts_delta: "▼ 24.4%", loy_accts_dir: "down", loy_accts_prev: "prev: 521",
+        net_marqii_val: "4.4", net_marqii_delta: "— vs 4.4 prior", net_marqii_dir: "na", net_marqii_prev: "prev: 4.4",
+        // DoorDash
+        dd_sales_val: "$7,966", dd_sales_delta: "▲ +76.2%", dd_sales_ddir: "positive", dd_sales_prev: "Prior week: $4,520",
+        dd_spend_val: "$1,518", dd_spend_delta: "▲ +47.0%", dd_spend_prev: "Prior week: $1,032",
+        dd_roas_val: "5.25x", dd_roas_delta: "▲ vs 4.38x prior", dd_roas_ddir: "positive", dd_roas_note: "$5.25 returned per $1 spent",
+        // Footer
+        footer_date: "Mar 29 – Apr 4, 2026"
+      },
+
       "2026-03-22": {
         // KPI
         kpi_rev: "$176,767",
